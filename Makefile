@@ -7,7 +7,7 @@ PLATFORM=$(shell uname -s)
 ifeq ($(PLATFORM),Darwin)
 OPENCL_LIBS=-framework OpenCL
 else
-OPENCL_LIBS=-lOpenCL
+OPENCL_LIBS=-L/opt/AMDAPP-2.7/lib/x86_64 -Wl,-R/opt/AMDAPP-2.7/lib/x86_64 -lOpenCL
 endif
 
 
